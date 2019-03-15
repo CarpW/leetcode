@@ -1,0 +1,16 @@
+class Solution {
+public:
+    bool isPalindrome(int x) {
+        if(x<0) return false;                 //负数不可能是回文数
+        int num = 1;
+        while(x/num>=10) num*=10;             //判断最高位数
+        while(x>0)
+        {int left = x/num;                    //计算最低位数
+         int right = x%10;                    //计算最高位数
+         if(left!=right) return false;        //比较
+         x=(x%num)/10;                        //去掉最高这次循环的最高位和最低位，int整型，忽略小数
+         num/=100;                            //x去掉两位，所以num也跟随去掉两位
+        }
+        return true;
+    }
+};
