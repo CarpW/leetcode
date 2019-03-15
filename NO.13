@@ -1,0 +1,20 @@
+I = 1, V = 5, X = 10, L = 50, C = 100, D = 500, M = 1000
+规则：左加右减
+检测数组长度，然后从最左边开始读取，读取完成后，读取下一个数，左大右小用加，左小右大用减，最后输出结果
+class Solution {
+public:
+    int romanToInt(string s) 
+    {
+        int star = 0;                                                                          //累加数组开始值为0
+        unordered_map<char, int> 
+        data{{'I', 1}, {'V', 5}, {'X', 10}, {'L', 50}, {'C', 100}, {'D', 500}, {'M', 1000}};   //定义罗马数字数字规则
+        for (int i = 0; i < s.size(); ++i)                                                     //循环读取输入数组从左到右
+        {
+            int sum=data[s[i]];                                                                //读取最左边罗马字，并将值存在sum
+            if(i==s.length()-1 || data[s[i+1]]<=data[s[i]])                                    //or条件
+            star +=sum;                                                                        //左边大于右边，+
+            else star -=sum;                                                                   //左边小于右边，-
+         }
+        return star;
+    }
+};
