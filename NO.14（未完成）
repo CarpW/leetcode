@@ -7,12 +7,12 @@ class Solution
     {
       if (strs.empty()) return "";                    //strs.empty()判断空的函数
       string s="";                                    //声明并引用到一个对象，有了对象,也有了可以调用对象的方法。（String s = String.Empty ）
-      for(int j=0; j<strs[0].size();++j)              //j是字符串
+      for(int j=0; j<strs[0].size();++j)              //j是字符串，以strs[0]为基础串作为堆笔
       {
-        char z=strs[0][j];                            //z是字符串
-        for (int i=1; i<strs.size();++i)
+        char z=strs[0][j];                            //z是读取的字符串的字符，strs[0]中每个位置
+        for (int i=1; i<strs.size();++i)              //i是字符串中的字符，第一个字符位置是0，已经读取到，则从位置1开始
         {
-          if (j>=strs[i].size()||strs[i][j] !=z)      //i是字符串中的字符
+          if (j>=strs[i].size()||strs[i][j] !=z)      //
           {
            return s;  
           }  
