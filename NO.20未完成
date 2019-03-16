@@ -17,6 +17,6 @@ public:
       No20.pop();                                                           //弹出栈顶元素
      } 
     } 
-    return No20.empty();  
-  }
+    return No20.empty();                                                    //循环完成后，stack为空是，则说明括号都匹配上了
+  } 
 };                       
