@@ -1,0 +1,23 @@
+去除重复数字，用两个指针，一个快，一个慢，相同，则慢+1，不相同，则快先加1，进入下一次循环前，再慢加1，最后输出慢+1
+
+
+class Solution
+{
+public:
+    int removeDuplicates(vector<int>& nums)
+    {
+      if (nums.empty()) return 0;               //判空
+      int slow=0, quick=0, z=nums.size();       //定义指针
+      while (quick<z)                           //不能超过数组长度
+      {
+        if (nums[slow] == nums[quick])          //相同，则快指针继续走
+        ++quick;
+        else                                    //else
+        {                                       //nums[++slow] = nums[quick++]
+        nums[++slow] = nums[quick];             //两种解法.
+        quick++;                                //将不同位置的快指针赋值给+1后的慢指针，这样计数就为2（代表两个不同数了）
+        }                                       //然后quick+1，开始下一轮对比
+      }
+     return slow + 1;                           //当quick走完的时候，因为其实数值是0，所以最后要再+1
+    }
+};
