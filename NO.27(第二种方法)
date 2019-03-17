@@ -1,0 +1,19 @@
+class Solution 
+{
+public:
+    int removeElement(vector<int>& nums, int val)     //vector对象实体，容纳许多其他类型相同的元素，头文件#include<vector>
+    {                                                 //vector<int>& nums 引用nums
+     int z=0;                                      
+     for(int i=0;i<nums.size();++i)                   //循环
+     {
+       if(nums[i]!=val)                               //遍历nums，不等于val时候，将指针移动，并加1
+       {
+         nums[z]=nums[i];
+         ++z;
+       }
+     }
+    return z; 
+    }
+};
+
+如果把条件换成当nums[]=val
