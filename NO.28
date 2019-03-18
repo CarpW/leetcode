@@ -1,0 +1,23 @@
+class Solution 
+{
+public:
+    int strStr(string haystack, string needle) 
+    {
+      if (needle.empty())                              //判空
+      return 0;
+      if (haystack.size()<needle.size())               //子串长度不能大于母串
+      return -1；
+      for (int i=0;i<=haystack.size();++i)             //外部循环，遍历母串
+      {
+        int j=0;                                       //申明
+        for (j=0;j<needle.size();++j)                  //遍历子串
+        {
+          if(haystack[i+j]!=needle[j])                 //在循环内判断字串匹配，如果不匹配，就跳出循环，并int j=0，则从子串第一个字符再匹配
+          break;
+        }
+        if(j==needle.size())                           //如果内部循环以j=子串长度结束，则说明字串在母串中完美匹配，外部的i则是第一个字串的位置
+        return i;
+      }
+      return -1;                                       //外部循环完都没遇到，则说明不存在。
+    }
+};
