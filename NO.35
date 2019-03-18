@@ -1,0 +1,15 @@
+找到目标值在字符串中的位置，没有则找到其应该插入位置
+
+class Solution 
+{
+public:
+    int searchInsert(vector<int>& nums, int target) 
+    {
+       for (int i=0;i<nums.size();++i)                     
+      {
+       if (nums[i]>=target)                              //若i位置大于等于目标值，则目标值位置就在i
+       return i;
+      }
+      return nums.size();                                //循环完字符串都没匹配到，则位置为字符穿长度
+    }
+};
