@@ -1,0 +1,17 @@
+要求最后一个单词长度，我们可以从头开始遍历，但是从尾部遍历更简单
+
+class Solution {
+public:
+    int lengthOfLastWord(string s) 
+    {
+      int sum=0,start=s.size()-1;                       \\将开始指针从string长度-1也就是末尾开始遍历
+      while(start>=0 && s[start] ==' ')                 \\遇到空格则肯定不是单词
+      --start;
+      while(start>=0 && s[start]!=' ')                   \\当遍历到第一个不是空格的字符的时候开始计数
+      {                                                  \\''表示单字符，""表示字符串
+        --start;
+        ++sum;   
+      }
+      return sum;
+    }
+};
