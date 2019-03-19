@@ -1,0 +1,22 @@
+加1算法考虑遇最后一位是9的时候进位
+class Solution 
+{
+public:
+    vector<int> plusOne(vector<int>& digits) 
+    {
+      int z=digits.size();                         
+      for(int i=z-1; i>=0; --i)                  //循环
+      {
+        if(digits[i]==9)                         //当遇到9则直接变0，再进入下一次循环
+           digits[i]=0;  
+        else
+        {
+          digits[i]+=1;                          //当循环几次后，不是9，说明循环过的数字都是9，所以会有进位，需要加1
+          return digits;                         //也可能一个9都没有，直接加1
+        }
+      }
+      if(digits.front()==0)                      //循环到第一位，for循环结束，就开始判断第一位的值
+      digits.insert(digits.begin(),1);           //为0，则再第一位前加1，若不是，则直接输出
+      return digits;
+    }
+};
