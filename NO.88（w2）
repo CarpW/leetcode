@@ -1,0 +1,18 @@
+class Solution 
+{
+public:
+    void merge(vector<int>& nums1, int m, vector<int>& nums2, int n) 
+    {
+     int i=m-1,j=n-1,k=m+n-1;                                            //从末尾比较
+     while(i>=0 && j >=0)                                                //确认两个数组非空
+     {
+      if(nums1[i]>nums2[j])                                              //判断两数组大小    
+        nums1[k--]=nums1[i--];                                           //因为将nums2差入nums1，所以用nums1
+      else
+        nums1[k--]=nums2[j--];                                           //若nums2大，则将其差入在后面
+     }
+      while (j>=0)                                                       //防止i比较完了，j还>0
+      nums1[k--]=nums2[j--];                                             //如果还有，因为本来就有序的，所以直接放就行了
+    }
+};
+第二中方法，前到后
