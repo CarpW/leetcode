@@ -1,0 +1,20 @@
+
+
+class Solution 
+{
+public:
+    ListNode* deleteDuplicates(ListNode* head) 
+    {
+     ListNode *N = head;                           //下一次开始之前的结果N指向head
+     while(N && N->next)                           //while判断真假，N存在并且有next
+     {
+        if(N->val == N->next->val)
+           N->next = N->next->next;
+        else
+        {
+           N=N->next;
+        }
+     }
+     return head;                                   //最后一次While之前，已经把最后一个值存在head里
+    }
+};
