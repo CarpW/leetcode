@@ -1,0 +1,12 @@
+class Solution 
+{
+public:
+    bool isSameTree(TreeNode* p, TreeNode* q) 
+    {
+      if (!p && !q)                                                           //如果都是空，则相等
+      return true; 
+      if((p && !q)|| (!p && q)||(p->val != q->val) )                          //或，只有全假，则开始比较
+      return false;
+      return isSameTree(p->left, q->left) && isSameTree(p->right, q->right);  //DFS
+    }
+};
