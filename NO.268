@@ -1,0 +1,15 @@
+求丢失那个数，因为给的是0-n数列，所以只需要求这个数列的和，然后减去当前的和，则能求出那个数的值
+
+class Solution 
+{
+public:
+    int missingNumber(vector<int>& nums) 
+    {
+      int sum = 0;
+      {
+        for (int a=0;a<nums.size();++a)
+        sum +=nums[a];
+      }
+      return 0.5*nums.size()*(nums.size()+1)-sum;
+    } 
+};
