@@ -4,7 +4,7 @@ public:
     int maxProfit(vector<int>& prices) 
     {
       int z=0,buy=INT_MAX;
-      for(int price:prices)                 //:用于增强循环
+      for(int price:prices)                 //:用于增强循环，容器中的每一个元素从前往后枚举出来，这就是prices的值
       {
         buy=min(buy,price);
         z=max(z,price -buy);
