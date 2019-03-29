@@ -1,0 +1,11 @@
+class Solution 
+{
+public:
+    int maximumProduct(vector<int>& nums) 
+    {
+      int n = nums.size();
+      sort(nums.begin(),nums.end());                     //对数组进行排序
+      int p=nums[0]*nums[1]*nums[n-1];                   //给定的范围有复数，所以做好的情况是最小的两个复数相乘再乘以最大的正数
+      return max(p,nums[n-1]*nums[n-2]*nums[n-3]);       //再与最后3位做比较
+    }
+};
