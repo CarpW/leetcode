@@ -1,0 +1,19 @@
+class Solution 
+{
+public:
+    vector<string> binaryTreePaths(TreeNode* root) 
+    {
+     if(!root) 
+     return {};                                            //空，则为真，则输出
+     if(!root->left && !root->right)                       
+     return {to_string(root->val)};                        //都只要有一个空一非空，则只输出一遍
+     vector<string> left = binaryTreePaths(root->left);
+     vector<string> right = binaryTreePaths(root->right);  //定义容器存储左右树
+     left.insert(left.end(), right.begin(), right.end());  //在指定位置loc前插入区间[start, end)的所有元素 . 
+     for (auto &a : left)                                  //在left列表中遍历
+     {
+       a = to_string(root -> val)+ "->"+a ;  
+     }
+     return left;
+    }
+};
