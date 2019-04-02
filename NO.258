@@ -1,0 +1,19 @@
+将一个数各个位相加，加到只剩个位数
+class Solution 
+{
+public:
+    int addDigits(int num) 
+    {
+      while(num/10>0)                //如果=0，则说明是个位数
+      {
+        int sum=0;
+        while(num>0)                 //说明循环后还不是个位数
+        {
+          sum += num%10;             //先求个位数
+          num/=10;                   //再求十位数
+        }
+        num = sum;                   //整个循环结束后，赋值
+      }
+      return num;
+    }
+};
