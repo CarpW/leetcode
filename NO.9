@@ -3,14 +3,38 @@ public:
     bool isPalindrome(int x) {
         if(x<0) return false;                 //负数不可能是回文数
         int num = 1;
-        while(x/num>=10) num*=10;             //判断最高位数
+        while(x/num>=10) 
+        num*=10;                              //判断最高位数
         while(x>0)
-        {int left = x/num;                    //计算最低位数
-         int right = x%10;                    //计算最高位数
-         if(left!=right) return false;        //比较
+        {
+         int left = x/num;                    //计算最高位数
+         int right = x%10;                    //计算最低位数
+         
+         if(left!=right) 
+         return false;                         //比较
          x=(x%num)/10;                        //去掉最高这次循环的最高位和最低位，int整型，忽略小数
          num/=100;                            //x去掉两位，所以num也跟随去掉两位
         }
         return true;
     }
 };
+
+
+steps:  121
+1.验证是否为负数
+2.121/1>=10              验证x是几位数
+  num = 10 * 1 = 10      大于10说明x是2位以上的数
+  x/10》=10              复合条件再执行
+  num = 10*10 = 100      
+  x/100                  不符合条件，跳出
+3.int 121/100=1          最左边
+  int 121%10=1           最右数
+  left = right 
+  x = 12 / 10 =1         
+  num = num/100 =1
+  
+  x = 1%1 /10 =0         x>0 所以再执行一遍while
+  num = 1 / 100 = 0
+  left = right 
+  x =0
+  return 0
