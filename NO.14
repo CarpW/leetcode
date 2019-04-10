@@ -12,8 +12,8 @@ class Solution
         char z=strs[0][j];                            //z是读取的字符串的字符，strs[0]中每个位置
         for (int i=1; i<strs.size();++i)              //i是字符串中的字符，第一个字符位置是0，已经读取到，则从位置1开始
         {
-          if (j>=strs[i].size()||strs[i][j] !=z)      //
-          {
+          if (j>=strs[i].size()||strs[i][j] !=z)      //比如j的位置是3，但某组string只有两个元素，则就不能再比对下去了
+          {                                           //真真，真假，假真都是真，return，只有假假（j小且相等）才能继续遍历
            return s;  
           }  
         } 
@@ -22,3 +22,17 @@ class Solution
       return s;
     }
 };
+steps：
+input 'flower' 'flow' 'fly'
+strs != empty   往下走
+
+j=0 j<6
+char z=strs[0][0] =f
+i=1 i<3
+if j=0 !> strs[1]=6 或者 strs[1][0] =f  false       //将第一个字符取出来，然后在小循环中一次循环另外的数列，确定他们是否相同
+++i                                                //循环结束，if是flase，则push进s
+f push 进s=f
+
+再接着进大循环，则取第一个数组的第二字符进行比对
+
+
