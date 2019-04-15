@@ -17,3 +17,21 @@ public:
 };
 
 如果把条件换成当nums[]=val
+
+
+输入 1232  val =3
+z = 0
+i = 0, i< 3
+nums0 = 1 != val=3    判断
+nums0 = nums0
+z=1,i=1
+nums1 =2  !=val=3     判断
+nums1 = nums1
+z=2,i=2
+nums2 =3 = val        判断
+z=2,i=3
+nums3 = 2 !=val
+nums2 = nums 3        判断
+z=3, i=3
+i !<3 输出
+z=3
