@@ -25,8 +25,8 @@ public:
      int z=0;                                      
      for(int i=0;i<nums.size();++i)                  
      {
-       if(nums[i]==val) 
-       continue;
+       if(nums[i]==val)                              //使用 == ，才能判断赋值
+       continue;                                     //if为真，continue直接进入下一次for循环
        else
        {                  
        nums[z]=nums[i];
