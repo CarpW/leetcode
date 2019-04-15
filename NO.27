@@ -17,6 +17,25 @@ public:
 };
 
 如果把条件换成当nums[]=val
+class Solution 
+{
+public:
+    int removeElement(vector<int>& nums, int val)    
+    {                                                 
+     int z=0;                                      
+     for(int i=0;i<nums.size();++i)                  
+     {
+       if(nums[i]==val) 
+       continue;
+       else
+       {                  
+       nums[z]=nums[i];
+       ++z;
+       }
+     }
+    return z; 
+    }
+};
 
 
 输入 1232  val =3
