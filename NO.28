@@ -21,3 +21,25 @@ public:
       return -1;                                       //外部循环完都没遇到，则说明不存在。
     }
 };
+
+
+Steps：
+haystack = hello, needle = ll
+1.haystack > needle 判断
+2.i=0,i< 4
+3.j=0,j<1
+判断 hay[0]=h != needle[0]=l
+break
+i=1,j=1
+i=1,i<4
+j=0,j<2
+判断 hay[1]=e != needle[0]=l
+break
+省略
+if hay[2]=l = needle[0]=l
+不break
+if j !=needle.size
+继续j的for循环
+对比
+成功并且 j = needle.size
+return
