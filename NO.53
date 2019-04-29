@@ -1,0 +1,14 @@
+class Solution 
+{
+public:
+    int maxSubArray(vector<int>& nums) 
+    {
+     int Z=INT_MIN, curZ=0;                  //求最大值不能出现负数，所以设置INT_MIN下线
+     for(int num:nums)                       //for each 循环
+     {
+      curZ=max(curZ+num,num);
+      Z=max (Z, curZ);
+     }
+     return Z;
+    }
+};
