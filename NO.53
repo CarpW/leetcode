@@ -4,10 +4,11 @@ public:
     int maxSubArray(vector<int>& nums) 
     {
      int Z=INT_MIN, curZ=0;                  //求最大值不能出现负数，所以设置INT_MIN下线
-     for(int num:nums)                       //for each 循环
-     {
-      curZ=max(curZ+num,num);
-      Z=max (Z, curZ);
+     for(int num:nums)                       //for each循环遍历
+     {                                       // 
+      curZ=max(curZ+num,num);                // curZ是将当前数组sum与下一个num比较，如果curz大则继续保留，
+                                             // 如果num大，相当于前面相加没有意义，则从这个num开始继续算和
+      Z=max (Z, curZ);                       // 将目前的和和之前的比较
      }
      return Z;
     }
