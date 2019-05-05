@@ -1,0 +1,19 @@
+二进制相加求和
+class Solution 
+{
+public:
+    string addBinary(string a, string b) 
+    {
+     string res = "";
+     int z = a.size()-1, w = b.size()-1, x = 0;
+     while(z>=0 || w>=0)
+     {
+     int f = z>=0? a[z--]-'0':0;
+     int s = w>=0? b[w--]-'0':0;
+     int sum = f + s + x;
+     res = to_string(sum%2) + res;
+     x = sum/2;
+     }
+     return x == 1? "1"+res:res; 
+    }
+};
