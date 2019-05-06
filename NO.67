@@ -8,12 +8,12 @@ public:
      int z = a.size()-1, w = b.size()-1, x = 0;
      while(z>=0 || w>=0)
      {
-     int f = z>=0? a[z--]-'0':0;
+     int f = z>=0? a[z--]-'0':0;                        //a[ ]是一个字符，将字符变成数值
      int s = w>=0? b[w--]-'0':0;
      int sum = f + s + x;
-     res = to_string(sum%2) + res;                      将数值转化为字符串。返回对应的字符串。
-     x = sum/2;
+     res = to_string(sum%2) + res;                      //将数值转化为字符串。返回对应的字符串。
+     x = sum/2;                                         //若为2，则需要在计算下一位时候进1
      }
-     return x == 1? "1"+res:res;                        单引号是字符型，双引号是字符串型
+     return x == 1? "1"+res:res;                        //单引号是字符型，双引号是字符串型
     }
 };
