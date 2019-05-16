@@ -1,0 +1,17 @@
+将前序排序转化成中序排序
+
+class Solution 
+{
+public:
+    TreeNode* sortedArrayToBST(vector<int>& nums) 
+    {
+     if(nums.empty()) 
+     return 0;
+     int mid = nums.size() / 2;
+     TreeNode *Z = new TreeNode(nums[mid]);
+     vector<int> left(nums.begin(),nums.begin()+mid), right(nums.begin()+mid+1,nums.end());
+     Z -> left = sortedArrayToBST(left);
+     Z -> right = sortedArrayToBST(right);
+     return Z;
+    }
+};
